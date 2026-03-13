@@ -240,6 +240,8 @@ export const translations = {
   },
   footer: {
     tagline: { en: "Proprietary Software Systems", it: "Sistemi Software Proprietari" },
+    legalName: "Tenet System di Fabrizio Cerulli",
+    vat: { en: "VAT No. 14595820961", it: "P. IVA 14595820961" },
     products: { en: "Products", it: "Prodotti" },
     contact: { en: "Contact", it: "Contatti" },
     privacy: { en: "Privacy Policy", it: "Privacy Policy" },
