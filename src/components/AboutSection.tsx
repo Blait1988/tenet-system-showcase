@@ -1,6 +1,7 @@
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { useLanguage } from "@/i18n/LanguageContext";
 import { translations, t } from "@/i18n/translations";
+import { Linkedin } from "lucide-react";
 
 const AboutSection = () => {
   const { ref, isVisible } = useScrollAnimation();
@@ -37,6 +38,15 @@ const AboutSection = () => {
             <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
               {t(a.founderBio, lang)}
             </p>
+            <a
+              href="https://www.linkedin.com/in/fabriziocerulli/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-5 inline-flex items-center gap-2 text-xs text-muted-foreground hover:text-foreground transition-colors"
+            >
+              <Linkedin className="h-3.5 w-3.5" />
+              <span>LinkedIn</span>
+            </a>
           </div>
         </div>
       </div>
