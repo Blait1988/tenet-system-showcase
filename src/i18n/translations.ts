@@ -195,11 +195,11 @@ export const translations = {
       en: "Tenet System was founded to build proprietary software products with a concrete logic: combining business vision, technical execution and scalable models into self-sustaining digital assets.",
       it: "Tenet System è stata fondata per costruire prodotti software proprietari con una logica concreta: combinare visione di business, esecuzione tecnica e modelli scalabili in asset digitali autosufficienti.",
     },
-    founderLabel: { en: "Founder & CEO", it: "Fondatore & CEO" },
+    founderLabel: { en: "Founder", it: "Founder" },
     founderName: "Fabrizio Cerulli",
     founderBio: {
-      en: "Tenet System brings together vertical software products developed with a data-driven approach and a clear focus on execution and operational scalability.",
-      it: "Tenet System riunisce prodotti software verticali sviluppati con un approccio data-driven e un chiaro focus su esecuzione e scalabilità operativa.",
+      en: "Fabrizio Cerulli founded Tenet System with a clear objective: to build proprietary software products that combine business logic, execution capability and scalability. After more than a decade managing companies, teams and operational growth, he brought this experience into building digital systems, also developing the technical expertise needed to transform ideas into real products. Today he leads Tenet System as a structure focused on vertical software, data, automation and long-term proprietary assets.",
+      it: "Fabrizio Cerulli ha fondato Tenet System con un obiettivo preciso: costruire prodotti software proprietari capaci di unire logica di business, execution e scalabilità. Dopo oltre un decennio trascorso a gestire aziende, team e crescita operativa, ha portato questa esperienza nella costruzione di sistemi digitali, sviluppando anche il lato tecnico necessario a trasformare idee in prodotti reali. Oggi guida Tenet System come struttura focalizzata su software verticale, dati, automazione e asset proprietari a lungo termine.",
     },
   },
   contact: {
