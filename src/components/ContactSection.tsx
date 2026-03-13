@@ -11,22 +11,22 @@ const ContactSection = () => {
 
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
-    // Placeholder for future backend integration
   };
 
   return (
-    <section id="contact" className="py-28 lg:py-36 border-t border-border/40">
+    <section id="contact" className="py-32 lg:py-40 border-t border-border/30">
       <div
         ref={ref}
         className={`mx-auto max-w-7xl px-6 transition-all duration-700 ${
           isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
         }`}
       >
-        <div className="grid gap-16 lg:grid-cols-2">
+        <div className="grid gap-20 lg:grid-cols-2">
           <div>
+            <p className="text-xs font-medium uppercase tracking-widest text-primary mb-4">Contact</p>
             <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">Let's talk</h2>
-            <p className="mt-4 text-lg text-muted-foreground">
-              Per partnership, richieste selezionate o approfondimenti sui prodotti Tenet System.
+            <p className="mt-4 text-lg text-muted-foreground leading-relaxed">
+              For partnerships, selected enquiries or to learn more about Tenet System's product portfolio.
             </p>
           </div>
 
@@ -34,17 +34,17 @@ const ContactSection = () => {
             <div className="grid gap-4 sm:grid-cols-2">
               <div className="space-y-2">
                 <label className="text-sm font-medium text-foreground">Name</label>
-                <Input placeholder="Your name" className="bg-card/60 border-border/60" />
+                <Input placeholder="Your name" className="bg-card/40 border-border/50 h-12" />
               </div>
               <div className="space-y-2">
                 <label className="text-sm font-medium text-foreground">Email</label>
-                <Input type="email" placeholder="you@company.com" className="bg-card/60 border-border/60" />
+                <Input type="email" placeholder="you@company.com" className="bg-card/40 border-border/50 h-12" />
               </div>
             </div>
 
             <div className="space-y-2">
               <label className="text-sm font-medium text-foreground">Company / Project</label>
-              <Input placeholder="Company or project name" className="bg-card/60 border-border/60" />
+              <Input placeholder="Company or project name" className="bg-card/40 border-border/50 h-12" />
             </div>
 
             <div className="space-y-2">
@@ -52,7 +52,7 @@ const ContactSection = () => {
               <Textarea
                 placeholder="Tell us about your needs..."
                 rows={5}
-                className="bg-card/60 border-border/60 resize-none"
+                className="bg-card/40 border-border/50 resize-none"
               />
             </div>
 
@@ -72,7 +72,7 @@ const ContactSection = () => {
               </label>
             </div>
 
-            <Button type="submit" disabled={!agreed} className="w-full sm:w-auto">
+            <Button type="submit" disabled={!agreed} size="lg">
               Send message
             </Button>
           </form>
