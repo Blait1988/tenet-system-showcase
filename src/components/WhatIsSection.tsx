@@ -1,56 +1,42 @@
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
-
-const points = [
-  {
-    title: "Proprietary by design",
-    text: "We build and own every product. No client work, no outsourcing — only proprietary software assets designed for long-term value.",
-  },
-  {
-    title: "Vertical focus",
-    text: "Each product targets a specific market with purpose-built architecture, data models and business logic tailored to real industry problems.",
-  },
-  {
-    title: "Execution-driven",
-    text: "From concept to deployment, every decision is guided by measurable outcomes, operational efficiency and scalable infrastructure.",
-  },
-];
+import { useLanguage } from "@/i18n/LanguageContext";
+import { translations, t } from "@/i18n/translations";
 
 const WhatIsSection = () => {
   const { ref, isVisible } = useScrollAnimation();
+  const { lang } = useLanguage();
+  const w = translations.whatIs;
 
   return (
-    <section className="py-36 lg:py-48">
+    <section className="py-28 lg:py-36">
       <div
         ref={ref}
         className={`mx-auto max-w-7xl px-6 transition-all duration-700 ${
           isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
         }`}
       >
-        <div className="grid gap-20 lg:grid-cols-[1fr_1fr] items-start">
-          {/* Left — statement */}
+        <div className="grid gap-16 lg:grid-cols-[1fr_1fr] items-start">
           <div className="lg:sticky lg:top-32">
-            <p className="text-xs font-medium uppercase tracking-[0.3em] text-primary mb-6">
-              Who we are
+            <p className="text-xs font-medium uppercase tracking-[0.3em] text-primary mb-5">
+              {t(w.label, lang)}
             </p>
-            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl lg:text-5xl leading-[1.1]">
-              A software company built around proprietary products.
+            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl lg:text-[2.75rem] leading-[1.12]">
+              {t(w.heading, lang)}
             </h2>
-            <p className="mt-8 text-lg leading-relaxed text-muted-foreground">
-              Tenet System is the structure through which proprietary digital
-              products are conceived, developed and scaled.
+            <p className="mt-6 text-base leading-relaxed text-muted-foreground">
+              {t(w.sub, lang)}
             </p>
           </div>
 
-          {/* Right — editorial list */}
-          <div className="space-y-0">
-            {points.map((point, i) => (
+          <div>
+            {w.points.map((point, i) => (
               <div
-                key={point.title}
-                className={`py-10 ${i !== points.length - 1 ? "border-b border-border/30" : ""}`}
+                key={i}
+                className={`py-8 ${i !== w.points.length - 1 ? "border-b border-border/30" : ""}`}
               >
-                <h3 className="text-lg font-semibold">{point.title}</h3>
-                <p className="mt-3 text-sm leading-relaxed text-muted-foreground max-w-md">
-                  {point.text}
+                <h3 className="text-base font-semibold">{t(point.title, lang)}</h3>
+                <p className="mt-2.5 text-sm leading-relaxed text-muted-foreground max-w-md">
+                  {t(point.text, lang)}
                 </p>
               </div>
             ))}
