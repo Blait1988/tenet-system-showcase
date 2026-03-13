@@ -33,22 +33,18 @@ const ContactSection = () => {
 
     setStatus("sending");
 
-    // ----------------------------------------------------------
-    // PLACEHOLDER: Replace with your backend endpoint.
-    // Expected POST body: { name, email, company, message }
-    // Destination: info@tenetsystem.it
-    // ----------------------------------------------------------
     try {
-      // Simulate network call — swap with real fetch() later
-      await new Promise((resolve) => setTimeout(resolve, 1200));
-
-      // Example real implementation:
-      // const res = await fetch("https://your-endpoint.com/contact", {
-      //   method: "POST",
-      //   headers: { "Content-Type": "application/json" },
-      //   body: JSON.stringify({ name, email, company, message }),
-      // });
-      // if (!res.ok) throw new Error("Send failed");
+      const res = await fetch("https://formspree.io/f/meerzzea", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: name.trim(),
+          email: email.trim(),
+          company: company.trim() || "",
+          message: message.trim(),
+        }),
+      });
+      if (!res.ok) throw new Error("Send failed");
 
       setStatus("success");
       setName("");
