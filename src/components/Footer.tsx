@@ -28,7 +28,7 @@ const Footer = () => {
         </div>
 
         <div className="mt-12 border-t border-border/20 pt-6">
-          <p className="text-[11px] tracking-wide text-muted-foreground/40">
+          <p className="text-[11px] tracking-wide text-muted-foreground/60">
             {t(f.bottom, lang)}
           </p>
         </div>
