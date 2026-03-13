@@ -2,16 +2,19 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Menu } from "lucide-react";
-
-const navLinks = [
-  { label: "Products", href: "#products" },
-  { label: "Approach", href: "#approach" },
-  { label: "About", href: "#about" },
-  { label: "Contact", href: "#contact" },
-];
+import { useLanguage } from "@/i18n/LanguageContext";
+import { translations, t } from "@/i18n/translations";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
+  const { lang, setLang } = useLanguage();
+
+  const navLinks = [
+    { label: t(translations.nav.products, lang), href: "#products" },
+    { label: t(translations.nav.approach, lang), href: "#approach" },
+    { label: t(translations.nav.about, lang), href: "#about" },
+    { label: t(translations.nav.contact, lang), href: "#contact" },
+  ];
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 border-b border-border/20 bg-background/90 backdrop-blur-xl">
@@ -31,8 +34,30 @@ const Navbar = () => {
               {link.label}
             </a>
           ))}
+
+          {/* Language switcher */}
+          <div className="flex items-center gap-1 text-xs tracking-wider ml-2">
+            <button
+              onClick={() => setLang("en")}
+              className={`px-2 py-1 rounded transition-colors ${
+                lang === "en" ? "text-foreground" : "text-muted-foreground hover:text-foreground"
+              }`}
+            >
+              EN
+            </button>
+            <span className="text-border">|</span>
+            <button
+              onClick={() => setLang("it")}
+              className={`px-2 py-1 rounded transition-colors ${
+                lang === "it" ? "text-foreground" : "text-muted-foreground hover:text-foreground"
+              }`}
+            >
+              IT
+            </button>
+          </div>
+
           <Button size="sm" className="ml-2" asChild>
-            <a href="#contact">Get in touch</a>
+            <a href="#contact">{t(translations.nav.cta, lang)}</a>
           </Button>
         </div>
 
@@ -55,8 +80,31 @@ const Navbar = () => {
                   {link.label}
                 </a>
               ))}
-              <Button className="mt-4" asChild>
-                <a href="#contact" onClick={() => setOpen(false)}>Get in touch</a>
+
+              {/* Mobile language switcher */}
+              <div className="flex items-center gap-2 text-sm tracking-wider pt-2 border-t border-border/30">
+                <button
+                  onClick={() => setLang("en")}
+                  className={`px-3 py-1.5 rounded transition-colors ${
+                    lang === "en" ? "text-foreground bg-accent" : "text-muted-foreground"
+                  }`}
+                >
+                  EN
+                </button>
+                <button
+                  onClick={() => setLang("it")}
+                  className={`px-3 py-1.5 rounded transition-colors ${
+                    lang === "it" ? "text-foreground bg-accent" : "text-muted-foreground"
+                  }`}
+                >
+                  IT
+                </button>
+              </div>
+
+              <Button className="mt-2" asChild>
+                <a href="#contact" onClick={() => setOpen(false)}>
+                  {t(translations.nav.cta, lang)}
+                </a>
               </Button>
             </div>
           </SheetContent>
