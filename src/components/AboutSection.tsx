@@ -1,6 +1,7 @@
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { useLanguage } from "@/i18n/LanguageContext";
 import { translations, t } from "@/i18n/translations";
+import { Linkedin } from "lucide-react";
 
 const AboutSection = () => {
   const { ref, isVisible } = useScrollAnimation();
