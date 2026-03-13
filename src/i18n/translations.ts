@@ -204,11 +204,17 @@ export const translations = {
   },
   contact: {
     label: { en: "Contact", it: "Contatti" },
-    heading: { en: "Let's talk", it: "Parliamone" },
+    heading: { en: "Contact", it: "Contatti" },
     sub: {
       en: "For partnerships, selected enquiries or to learn more about Tenet System's product portfolio.",
       it: "Per partnership, richieste selezionate o per saperne di più sul portfolio prodotti di Tenet System.",
     },
+    companyBlock: {
+      en: "Tenet System di Fabrizio Cerulli\nVAT No. 14595820961\nVia Pietro Nenni 5, 20128 Milano, Italy",
+      it: "Tenet System di Fabrizio Cerulli\nP. IVA 14595820961\nVia Pietro Nenni 5, 20128 Milano",
+    },
+    generalEmail: { en: "General email", it: "Email generale" },
+    supportEmail: { en: "Support", it: "Supporto" },
     name: { en: "Name", it: "Nome" },
     namePlaceholder: { en: "Your name", it: "Il tuo nome" },
     email: { en: "Email", it: "Email" },
@@ -223,9 +229,19 @@ export const translations = {
     },
     privacyLink: { en: "Privacy Policy", it: "Privacy Policy" },
     submit: { en: "Send message", it: "Invia messaggio" },
+    successMessage: {
+      en: "Message sent successfully. We'll get back to you as soon as possible.",
+      it: "Messaggio inviato correttamente. Ti risponderemo appena possibile.",
+    },
+    errorMessage: {
+      en: "Something went wrong. Please try again in a moment.",
+      it: "Invio non riuscito. Riprova tra qualche istante.",
+    },
   },
   footer: {
     tagline: { en: "Proprietary Software Systems", it: "Sistemi Software Proprietari" },
+    legalName: "Tenet System di Fabrizio Cerulli",
+    vat: { en: "VAT No. 14595820961", it: "P. IVA 14595820961" },
     products: { en: "Products", it: "Prodotti" },
     contact: { en: "Contact", it: "Contatti" },
     privacy: { en: "Privacy Policy", it: "Privacy Policy" },
