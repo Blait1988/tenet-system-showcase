@@ -1,62 +1,83 @@
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const HeroSection = () => {
-  const { ref, isVisible } = useScrollAnimation(0.1);
+  const { ref, isVisible } = useScrollAnimation(0.05);
 
   return (
-    <section className="relative min-h-screen flex items-center pt-16">
-      {/* Warm gradient background */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_hsl(38_25%_58%_/_0.04),_transparent_60%)]" />
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,_hsl(30_5%_15%_/_0.5),_transparent_60%)]" />
+    <section className="relative min-h-screen flex items-center overflow-hidden grain-overlay">
+      {/* Animated gradient orbs */}
+      <div className="hero-orb hero-orb-1" />
+      <div className="hero-orb hero-orb-2" />
+      <div className="hero-orb hero-orb-3" />
 
-      <div ref={ref} className="mx-auto max-w-7xl px-6 py-32 lg:py-44 w-full">
-        <div
-          className={`max-w-4xl transition-all duration-1000 ${
-            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"
-          }`}
-        >
+      {/* Subtle grid pattern */}
+      <div
+        className="absolute inset-0 opacity-[0.02]"
+        style={{
+          backgroundImage: `linear-gradient(hsl(var(--foreground)) 1px, transparent 1px), linear-gradient(90deg, hsl(var(--foreground)) 1px, transparent 1px)`,
+          backgroundSize: '80px 80px',
+        }}
+      />
+
+      <div ref={ref} className="relative mx-auto max-w-7xl px-6 py-36 lg:py-48 w-full">
+        <div className={`stagger-reveal ${isVisible ? "is-visible" : ""}`}>
           {/* Label */}
-          <p className="text-xs font-medium uppercase tracking-[0.3em] text-primary mb-8">
-            Software Company
-          </p>
-
-          {/* Headline */}
-          <h1 className="text-5xl font-bold leading-[1.08] tracking-tight sm:text-6xl lg:text-7xl">
-            Building proprietary
-            <br />
-            software systems across
-            <br />
-            <span className="text-primary">high-value verticals.</span>
-          </h1>
-
-          {/* Subheadline */}
-          <p className="mt-10 max-w-2xl text-lg leading-relaxed text-muted-foreground">
-            Tenet System is the software company behind a growing portfolio of
-            proprietary digital products across mobile, finance security and
-            quantitative systems.
-          </p>
-
-          {/* CTAs */}
-          <div className="mt-12 flex flex-wrap gap-5">
-            <a
-              href="#products"
-              className="inline-flex h-13 items-center rounded-lg bg-primary px-8 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
-            >
-              Explore products
-            </a>
-            <a
-              href="#contact"
-              className="inline-flex h-13 items-center rounded-lg border border-border/60 px-8 text-sm font-medium text-foreground transition-colors hover:bg-accent"
-            >
-              Get in touch
-            </a>
+          <div>
+            <p className="inline-flex items-center gap-3 text-xs font-medium uppercase tracking-[0.35em] text-primary/70 mb-10">
+              <span className="h-px w-8 bg-primary/30" />
+              Software Company
+            </p>
           </div>
 
-          {/* Labels */}
-          <div className="mt-20 flex flex-wrap gap-12 text-xs uppercase tracking-[0.2em] text-muted-foreground/60">
-            <span>3 Active Products</span>
-            <span>Proprietary Software</span>
-            <span>Vertical Systems</span>
+          {/* Headline */}
+          <div>
+            <h1 className="text-5xl font-bold leading-[1.05] tracking-[-0.02em] sm:text-6xl lg:text-[5.5rem]">
+              Building proprietary
+              <br className="hidden sm:block" />
+              software systems
+              <br className="hidden sm:block" />
+              <span className="text-gradient-gold">across high-value verticals.</span>
+            </h1>
+          </div>
+
+          {/* Subheadline */}
+          <div>
+            <p className="mt-10 max-w-xl text-lg leading-[1.7] text-muted-foreground font-light">
+              Tenet System is the software company behind a growing portfolio of
+              proprietary digital products across mobile, finance security and
+              quantitative systems.
+            </p>
+          </div>
+
+          {/* CTAs */}
+          <div>
+            <div className="mt-14 flex flex-wrap items-center gap-6">
+              <a
+                href="#products"
+                className="group relative inline-flex h-14 items-center overflow-hidden rounded-full bg-primary px-10 text-sm font-medium text-primary-foreground transition-all duration-500 hover:shadow-[0_0_40px_-10px_hsl(var(--glow-primary)_/_0.4)]"
+              >
+                <span className="relative z-10">Explore products</span>
+                <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700" />
+              </a>
+              <a
+                href="#contact"
+                className="inline-flex h-14 items-center rounded-full border border-border/40 px-10 text-sm font-medium text-foreground/80 transition-all duration-400 hover:border-primary/30 hover:text-foreground hover:bg-primary/5"
+              >
+                Get in touch
+              </a>
+            </div>
+          </div>
+
+          {/* Bottom labels with animated line */}
+          <div>
+            <div className="mt-28 flex items-center gap-8">
+              <div className="h-px w-16 bg-gradient-to-r from-primary/40 to-transparent shimmer-line" />
+              <div className="flex flex-wrap gap-10 text-[11px] uppercase tracking-[0.25em] text-muted-foreground/50 font-medium">
+                <span>3 Active Products</span>
+                <span>Proprietary Software</span>
+                <span>Vertical Systems</span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
