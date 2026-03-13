@@ -17,6 +17,11 @@ const Footer = () => {
             <p className="mt-1.5 text-xs text-muted-foreground tracking-wide">
               {t(f.tagline, lang)}
             </p>
+            <p className="mt-3 text-[11px] text-muted-foreground/60 leading-relaxed">
+              {f.legalName}
+              <br />
+              {t(f.vat, lang)}
+            </p>
           </div>
 
           <div className="flex flex-wrap gap-8 text-xs text-muted-foreground tracking-wide">
