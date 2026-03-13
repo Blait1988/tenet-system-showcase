@@ -23,7 +23,7 @@ const ApproachSection = () => {
   const { ref, isVisible } = useScrollAnimation();
 
   return (
-    <section id="approach" className="py-36 lg:py-48 border-t border-border/15">
+    <section id="approach" className="py-36 lg:py-48 border-t border-border/20">
       <div
         ref={ref}
         className={`mx-auto max-w-7xl px-6 transition-all duration-700 ${
@@ -31,33 +31,28 @@ const ApproachSection = () => {
         }`}
       >
         <div className="max-w-2xl mb-24">
-          <div className="flex items-center gap-3 mb-6">
-            <span className="h-px w-8 bg-primary/30" />
-            <p className="text-xs font-medium uppercase tracking-[0.35em] text-primary/70">
-              Our Process
-            </p>
-          </div>
-          <h2 className="text-4xl font-bold tracking-[-0.02em] sm:text-5xl">
+          <p className="text-xs font-medium uppercase tracking-[0.3em] text-primary mb-6">
+            Our Process
+          </p>
+          <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
             How we build products
           </h2>
-          <p className="mt-5 text-lg text-muted-foreground font-light leading-relaxed">
+          <p className="mt-4 text-lg text-muted-foreground">
             Every product follows the same discipline: a real problem, clean
             architecture, continuous measurement.
           </p>
         </div>
 
-        <div className={`grid gap-0 sm:grid-cols-2 stagger-reveal ${isVisible ? "is-visible" : ""}`}>
+        <div className="grid gap-0 sm:grid-cols-2">
           {pillars.map((pillar, i) => (
             <div
               key={pillar.title}
-              className={`group py-14 px-0 sm:px-12 transition-colors duration-300 ${
-                i < 2 ? "border-b border-border/15" : ""
-              } ${i % 2 === 0 ? "sm:border-r sm:border-border/15 sm:pr-16 sm:pl-0" : "sm:pl-16 sm:pr-0"}`}
+              className={`py-12 px-0 sm:px-10 ${
+                i < 2 ? "border-b border-border/20" : ""
+              } ${i % 2 === 0 ? "sm:border-r sm:border-border/20 sm:pr-14 sm:pl-0" : "sm:pl-14 sm:pr-0"}`}
             >
-              <h3 className="text-2xl font-semibold tracking-tight transition-colors duration-300 group-hover:text-primary">
-                {pillar.title}
-              </h3>
-              <p className="mt-5 text-sm leading-[1.8] text-muted-foreground font-light">
+              <h3 className="text-xl font-semibold tracking-tight">{pillar.title}</h3>
+              <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
                 {pillar.text}
               </p>
             </div>

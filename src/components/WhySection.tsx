@@ -36,35 +36,30 @@ const WhySection = () => {
       >
         <div className="grid gap-20 lg:grid-cols-[1fr_1.4fr] items-start">
           <div className="lg:sticky lg:top-32">
-            <div className="flex items-center gap-3 mb-6">
-              <span className="h-px w-8 bg-primary/30" />
-              <p className="text-xs font-medium uppercase tracking-[0.35em] text-primary/70">
-                Our Thesis
-              </p>
-            </div>
-            <h2 className="text-4xl font-bold tracking-[-0.02em] sm:text-5xl leading-tight">
+            <p className="text-xs font-medium uppercase tracking-[0.3em] text-primary mb-6">
+              Our Thesis
+            </p>
+            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl leading-tight">
               Not an agency.
               <br />
               Not a generic startup.
             </h2>
-            <p className="mt-5 text-2xl font-semibold text-gradient-gold">A product engine.</p>
-            <p className="mt-8 text-base text-muted-foreground leading-[1.7] font-light">
+            <p className="mt-4 text-xl font-medium text-primary">A product engine.</p>
+            <p className="mt-8 text-base text-muted-foreground leading-relaxed">
               Tenet System exists to build, own and scale proprietary software
               products — each one designed as an independent, defensible business
               asset.
             </p>
           </div>
 
-          <div className={`stagger-reveal ${isVisible ? "is-visible" : ""}`}>
+          <div>
             {points.map((point, i) => (
               <div
                 key={point.title}
-                className={`group py-8 ${i !== points.length - 1 ? "border-b border-border/15" : ""}`}
+                className={`py-8 ${i !== points.length - 1 ? "border-b border-border/20" : ""}`}
               >
-                <h3 className="text-base font-semibold transition-colors duration-300 group-hover:text-primary">
-                  {point.title}
-                </h3>
-                <p className="mt-2 text-sm leading-[1.8] text-muted-foreground font-light max-w-lg">
+                <h3 className="text-base font-semibold">{point.title}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-muted-foreground max-w-lg">
                   {point.text}
                 </p>
               </div>
