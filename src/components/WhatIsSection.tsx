@@ -35,7 +35,7 @@ const WhatIsSection = () => {
                 className={`py-8 ${i !== w.points.length - 1 ? "border-b border-border/30" : ""}`}
               >
                 <h3 className="text-base font-semibold">{t(point.title, lang)}</h3>
-                <p className="mt-2.5 text-sm leading-relaxed text-muted-foreground max-w-md">
+                <p className="mt-2.5 text-sm leading-[1.75] text-secondary-foreground max-w-md">
                   {t(point.text, lang)}
                 </p>
               </div>

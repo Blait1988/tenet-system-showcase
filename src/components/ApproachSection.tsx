@@ -36,7 +36,7 @@ const ApproachSection = () => {
               } ${i % 2 === 0 ? "sm:border-r sm:border-border/20 sm:pr-12 sm:pl-0" : "sm:pl-12 sm:pr-0"}`}
             >
               <h3 className="text-lg font-semibold tracking-tight">{t(pillar.title, lang)}</h3>
-              <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+              <p className="mt-3 text-sm leading-[1.75] text-secondary-foreground">
                 {t(pillar.text, lang)}
               </p>
             </div>

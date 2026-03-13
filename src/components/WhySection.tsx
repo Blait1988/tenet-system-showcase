@@ -38,7 +38,7 @@ const WhySection = () => {
                 className={`py-7 ${i !== th.points.length - 1 ? "border-b border-border/20" : ""}`}
               >
                 <h3 className="text-sm font-semibold">{t(point.title, lang)}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-muted-foreground max-w-lg">
+                <p className="mt-2 text-sm leading-[1.75] text-secondary-foreground max-w-lg">
                   {t(point.text, lang)}
                 </p>
               </div>
