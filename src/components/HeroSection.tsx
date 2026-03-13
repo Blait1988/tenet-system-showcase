@@ -1,99 +1,62 @@
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
-const EcosystemVisual = () => (
-  <div className="relative w-full max-w-lg mx-auto">
-    <div className="relative w-full aspect-[4/3]">
-      {/* Central company block */}
-      <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 rounded-2xl border border-border bg-card px-8 py-5 shadow-lg shadow-primary/5">
-        <p className="text-[11px] font-medium uppercase tracking-[0.2em] text-muted-foreground">Parent Company</p>
-        <p className="mt-1 text-lg font-semibold text-foreground">Tenet System</p>
-      </div>
-
-      {/* Product nodes */}
-      <div className="absolute top-0 left-0 rounded-xl border border-accent-tapper/20 bg-card/70 px-5 py-3">
-        <div className="h-1 w-6 rounded-full bg-accent-tapper/50 mb-2" />
-        <p className="text-xs font-medium text-foreground/80">Tapper</p>
-        <p className="text-[10px] text-muted-foreground">Mobile Platform</p>
-      </div>
-
-      <div className="absolute top-0 right-0 rounded-xl border border-accent-finguard/20 bg-card/70 px-5 py-3">
-        <div className="h-1 w-6 rounded-full bg-accent-finguard/50 mb-2" />
-        <p className="text-xs font-medium text-foreground/80">FinGuard</p>
-        <p className="text-[10px] text-muted-foreground">Finance Security</p>
-      </div>
-
-      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 rounded-xl border border-accent-delta/20 bg-card/70 px-5 py-3">
-        <div className="h-1 w-6 rounded-full bg-accent-delta/50 mb-2" />
-        <p className="text-xs font-medium text-foreground/80">Delta Terminal</p>
-        <p className="text-[10px] text-muted-foreground">Quant Systems</p>
-      </div>
-
-      {/* Connection lines */}
-      <svg className="absolute inset-0 w-full h-full pointer-events-none" viewBox="0 0 400 300" fill="none">
-        <line x1="80" y1="65" x2="170" y2="130" stroke="hsl(255 50% 62% / 0.12)" strokeWidth="1" />
-        <line x1="320" y1="65" x2="230" y2="130" stroke="hsl(195 55% 46% / 0.12)" strokeWidth="1" />
-        <line x1="200" y1="175" x2="200" y2="235" stroke="hsl(152 50% 42% / 0.10)" strokeWidth="1" />
-      </svg>
-    </div>
-  </div>
-);
-
 const HeroSection = () => {
   const { ref, isVisible } = useScrollAnimation(0.1);
 
   return (
     <section className="relative min-h-screen flex items-center pt-16">
-      <div className="absolute inset-0 bg-gradient-to-br from-primary/[0.03] via-transparent to-transparent" />
+      {/* Warm gradient background */}
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_hsl(38_25%_58%_/_0.04),_transparent_60%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,_hsl(30_5%_15%_/_0.5),_transparent_60%)]" />
 
-      <div ref={ref} className="mx-auto max-w-7xl px-6 py-24 lg:py-36 w-full">
-        <div className="grid gap-20 lg:grid-cols-2 items-center">
-          {/* Text */}
-          <div
-            className={`space-y-10 transition-all duration-700 ${
-              isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-            }`}
-          >
-            <h1 className="text-4xl font-bold leading-[1.1] tracking-tight sm:text-5xl lg:text-[3.5rem]">
-              Building proprietary software systems across high-value verticals.
-            </h1>
+      <div ref={ref} className="mx-auto max-w-7xl px-6 py-32 lg:py-44 w-full">
+        <div
+          className={`max-w-4xl transition-all duration-1000 ${
+            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"
+          }`}
+        >
+          {/* Label */}
+          <p className="text-xs font-medium uppercase tracking-[0.3em] text-primary mb-8">
+            Software Company
+          </p>
 
-            <p className="max-w-xl text-lg leading-relaxed text-muted-foreground">
-              Tenet System is the software company behind a growing portfolio of proprietary digital
-              products across mobile, finance security and quantitative systems.
-            </p>
+          {/* Headline */}
+          <h1 className="text-5xl font-bold leading-[1.08] tracking-tight sm:text-6xl lg:text-7xl">
+            Building proprietary
+            <br />
+            software systems across
+            <br />
+            <span className="text-primary">high-value verticals.</span>
+          </h1>
 
-            <div className="flex flex-wrap gap-4">
-              <a
-                href="#products"
-                className="inline-flex h-12 items-center rounded-lg bg-primary px-7 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
-              >
-                Explore our products
-              </a>
-              <a
-                href="#contact"
-                className="inline-flex h-12 items-center rounded-lg border border-border px-7 text-sm font-medium text-foreground transition-colors hover:bg-accent"
-              >
-                Get in touch
-              </a>
-            </div>
+          {/* Subheadline */}
+          <p className="mt-10 max-w-2xl text-lg leading-relaxed text-muted-foreground">
+            Tenet System is the software company behind a growing portfolio of
+            proprietary digital products across mobile, finance security and
+            quantitative systems.
+          </p>
 
-            {/* Labels */}
-            <div className="flex flex-wrap gap-x-8 gap-y-3 pt-2">
-              {["3 Active Products", "Proprietary Software", "Vertical Systems", "Built for Scale"].map((label) => (
-                <span key={label} className="text-xs uppercase tracking-widest text-muted-foreground">
-                  {label}
-                </span>
-              ))}
-            </div>
+          {/* CTAs */}
+          <div className="mt-12 flex flex-wrap gap-5">
+            <a
+              href="#products"
+              className="inline-flex h-13 items-center rounded-lg bg-primary px-8 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
+            >
+              Explore products
+            </a>
+            <a
+              href="#contact"
+              className="inline-flex h-13 items-center rounded-lg border border-border/60 px-8 text-sm font-medium text-foreground transition-colors hover:bg-accent"
+            >
+              Get in touch
+            </a>
           </div>
 
-          {/* Visual */}
-          <div
-            className={`transition-all duration-700 delay-200 ${
-              isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-            }`}
-          >
-            <EcosystemVisual />
+          {/* Labels */}
+          <div className="mt-20 flex flex-wrap gap-12 text-xs uppercase tracking-[0.2em] text-muted-foreground/60">
+            <span>3 Active Products</span>
+            <span>Proprietary Software</span>
+            <span>Vertical Systems</span>
           </div>
         </div>
       </div>

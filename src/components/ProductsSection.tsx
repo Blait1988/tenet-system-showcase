@@ -7,29 +7,26 @@ const products = [
     description:
       "A mobile-first platform for talent discovery and performance advertising — designed to connect visibility, competition and monetisation within a scalable video ecosystem.",
     tags: ["Mobile-first", "Social Mechanics", "Performance Advertising"],
-    accentVar: "--accent-tapper",
     accentClass: "bg-accent-tapper",
-    borderHover: "hover:border-accent-tapper/30",
+    borderAccent: "group-hover:border-accent-tapper/20",
   },
   {
     name: "FinGuard",
-    category: "Finance Security SaaS",
+    category: "Finance Security",
     description:
       "Anti-fraud BEC software for finance teams and SMEs, featuring automated IBAN verification, document OCR and cryptographic proof layers to secure payment workflows.",
     tags: ["BEC Protection", "IBAN Verification", "OCR & Proof Layer"],
-    accentVar: "--accent-finguard",
     accentClass: "bg-accent-finguard",
-    borderHover: "hover:border-accent-finguard/30",
+    borderAccent: "group-hover:border-accent-finguard/20",
   },
   {
     name: "Delta Terminal",
-    category: "Quantitative Monitoring System",
+    category: "Quantitative Systems",
     description:
       "A live monitoring and statistical reporting system built to transform quantitative signals into structured, measurable operational frameworks.",
     tags: ["Live Monitoring", "Statistical Reporting", "Quant Framework"],
-    accentVar: "--accent-delta",
     accentClass: "bg-accent-delta",
-    borderHover: "hover:border-accent-delta/30",
+    borderAccent: "group-hover:border-accent-delta/20",
   },
 ];
 
@@ -37,61 +34,56 @@ const ProductsSection = () => {
   const { ref, isVisible } = useScrollAnimation();
 
   return (
-    <section id="products" className="py-32 lg:py-40 border-t border-border/30">
+    <section id="products" className="py-36 lg:py-48 border-t border-border/20">
       <div
         ref={ref}
         className={`mx-auto max-w-7xl px-6 transition-all duration-700 ${
           isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
         }`}
       >
-        <div className="max-w-3xl">
-          <p className="text-xs font-medium uppercase tracking-widest text-primary mb-4">Product Portfolio</p>
-          <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">Active products</h2>
-          <p className="mt-4 text-lg text-muted-foreground">
-            Three products across three distinct verticals — united by a shared philosophy of
-            proprietary ownership, data infrastructure and scalable architecture.
-          </p>
-        </div>
+        <p className="text-xs font-medium uppercase tracking-[0.3em] text-primary mb-6">
+          Product Portfolio
+        </p>
+        <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
+          Active products
+        </h2>
+        <p className="mt-4 max-w-2xl text-lg text-muted-foreground">
+          Three products across three distinct verticals — united by proprietary
+          ownership, data infrastructure and scalable architecture.
+        </p>
 
-        <div className="mt-20 grid gap-8 lg:grid-cols-3">
+        <div className="mt-24 space-y-0">
           {products.map((product, i) => (
             <div
               key={product.name}
-              className={`group relative flex flex-col rounded-2xl border border-border/40 bg-card/25 p-10 transition-all duration-500 hover:bg-card/60 ${product.borderHover}`}
-              style={{ transitionDelay: `${i * 100}ms` }}
+              className={`group grid gap-8 lg:grid-cols-[200px_1fr_1fr] items-start py-16 ${
+                i !== products.length - 1 ? "border-b border-border/20" : ""
+              }`}
             >
-              {/* Accent bar */}
-              <div className={`h-1 w-10 rounded-full ${product.accentClass} opacity-60 mb-6`} />
+              {/* Left — name + accent */}
+              <div>
+                <div className={`h-1 w-8 rounded-full ${product.accentClass} opacity-50 mb-5`} />
+                <h3 className="text-2xl font-bold tracking-tight">{product.name}</h3>
+                <p className="mt-1 text-xs uppercase tracking-[0.2em] text-muted-foreground">
+                  {product.category}
+                </p>
+              </div>
 
-              <p className="text-[11px] font-medium uppercase tracking-widest text-muted-foreground">
-                {product.category}
-              </p>
-
-              <h3 className="mt-2 text-2xl font-bold">{product.name}</h3>
-
-              <p className="mt-5 flex-1 text-sm leading-relaxed text-muted-foreground">
+              {/* Center — description */}
+              <p className="text-base leading-relaxed text-muted-foreground lg:pt-7">
                 {product.description}
               </p>
 
-              {/* Tags */}
-              <div className="mt-8 flex flex-wrap gap-2">
+              {/* Right — tags */}
+              <div className="flex flex-wrap gap-2 lg:justify-end lg:pt-7">
                 {product.tags.map((tag) => (
                   <span
                     key={tag}
-                    className="rounded-full border border-border/40 px-3 py-1 text-[10px] font-medium uppercase tracking-wider text-muted-foreground"
+                    className="rounded-full border border-border/30 px-3 py-1 text-[10px] font-medium uppercase tracking-wider text-muted-foreground"
                   >
                     {tag}
                   </span>
                 ))}
-              </div>
-
-              <div className="mt-8">
-                <span className="inline-flex items-center text-sm font-medium text-primary transition-all group-hover:gap-2">
-                  Learn more
-                  <svg className="ml-1 h-4 w-4 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
-                  </svg>
-                </span>
               </div>
             </div>
           ))}

@@ -14,9 +14,9 @@ const Navbar = () => {
   const [open, setOpen] = useState(false);
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 border-b border-border/40 bg-background/90 backdrop-blur-xl">
+    <nav className="fixed top-0 left-0 right-0 z-50 border-b border-border/20 bg-background/90 backdrop-blur-xl">
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-6">
-        <a href="/" className="text-base font-semibold tracking-[0.15em] text-foreground">
+        <a href="/" className="text-sm font-semibold tracking-[0.2em] text-foreground">
           TENET SYSTEM
         </a>
 
