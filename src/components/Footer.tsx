@@ -11,9 +11,7 @@ const Footer = () => {
       <div className="mx-auto max-w-7xl px-6">
         <div className="flex flex-col gap-10 md:flex-row md:items-start md:justify-between">
           <div>
-            <span className="text-sm font-semibold tracking-[0.2em] text-foreground">
-              TENET SYSTEM
-            </span>
+            <img src="/tenet-logo.png" alt="Tenet System" className="h-7" />
             <p className="mt-1.5 text-xs text-muted-foreground tracking-wide">
               {t(f.tagline, lang)}
             </p>
