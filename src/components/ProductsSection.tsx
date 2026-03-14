@@ -46,7 +46,11 @@ const ProductsSection = () => {
                   <div className={`mt-1.5 h-10 w-1.5 rounded-full ${accent.accentClass} opacity-70 transition-opacity group-hover:opacity-100`} />
                   <div>
                     <h3 className={`text-xl font-bold tracking-tight transition-colors duration-300 ${accent.textAccent} opacity-85 group-hover:opacity-100`}>
-                      {product.name}
+                      {product.url ? (
+                        <a href={product.url} target="_blank" rel="noopener noreferrer" className="hover:underline underline-offset-4">
+                          {product.name}
+                        </a>
+                      ) : product.name}
                     </h3>
                     <p className="mt-1 text-[11px] uppercase tracking-[0.2em] text-muted-foreground/70 font-medium">
                       {t(product.category, lang)}

@@ -67,6 +67,7 @@ export const translations = {
     items: [
       {
         name: "Tapper",
+        url: "https://www.tapperarena.com/",
         category: { en: "Mobile Platform", it: "Piattaforma Mobile" },
         description: {
           en: "A mobile-first platform for talent discovery and performance advertising — designed to connect visibility, competition and monetisation within a scalable video ecosystem.",
@@ -79,6 +80,7 @@ export const translations = {
       },
       {
         name: "FinGuard",
+        url: null,
         category: { en: "Finance Security", it: "Sicurezza Finanziaria" },
         description: {
           en: "Anti-fraud BEC software for finance teams and SMEs, featuring automated IBAN verification, document OCR and cryptographic proof layers to secure payment workflows.",
@@ -91,6 +93,7 @@ export const translations = {
       },
       {
         name: "Delta Terminal",
+        url: "https://www.deltaterminale.com/",
         category: { en: "Quantitative Systems", it: "Sistemi Quantitativi" },
         description: {
           en: "A live monitoring and statistical reporting system built to transform quantitative signals into structured, measurable operational frameworks.",
