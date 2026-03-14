@@ -213,8 +213,8 @@ export const translations = {
       it: "Per partnership, richieste selezionate o per saperne di più sul portfolio prodotti di Tenet System.",
     },
     companyBlock: {
-      en: "Tenet System\nVAT No. 14595820961\nVia Pietro Nenni 5, 20128 Milano, Italy",
-      it: "Tenet System\nP. IVA 14595820961\nVia Pietro Nenni 5, 20128 Milano",
+      en: "Tenet System\nVAT No. 14595820961",
+      it: "Tenet System\nP. IVA 14595820961",
     },
     generalEmail: { en: "General email", it: "Email generale" },
     supportEmail: { en: "Support", it: "Supporto" },
